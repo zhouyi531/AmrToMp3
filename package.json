@@ -1,0 +1,36 @@
+{
+  "name": "@austinz/amrToMp3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register src/__tests__/**/*.ts",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [],
+  "author": "Austin Zhou <azhou3@glgroup.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ffmpeg-static": "2.0.0",
+    "@types/node": "11.11.7",
+    "child_process": "1.0.2",
+    "ffmpeg-static": "2.4.0",
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "@types/chai": "4.1.7",
+    "@types/mocha": "5.2.6",
+    "chai": "4.2.0",
+    "dotenv": "7.0.0",
+    "mocha": "6.0.2",
+    "ts-node": "8.0.3",
+    "typescript": "3.3.4000"
+  }
+}
