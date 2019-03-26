@@ -1,11 +1,11 @@
 {
-  "name": "@austinz/amrToMp3",
+  "name": "armtomp3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "mocha --require ts-node/register src/__tests__/**/*.ts",
-    "build": "tsc",
+    "build": "tsc -p .",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

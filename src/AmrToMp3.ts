@@ -1,8 +1,7 @@
-import child_process, { exec } from "child_process";
+import { exec } from "child_process";
+export * from "child_process";
 import * as path from "path";
 import ffmpeg from "ffmpeg-static";
-import { resolve } from "dns";
-import { rejects } from "assert";
 
 export default class AmrToMp3 {
   static async Convert(filePath: string, outputDir: string): Promise<string> {
