@@ -12,7 +12,7 @@ export class AmrToMp3 {
       if (etc.toLowerCase() != 'amr') {
         reject('input must be amr file');
       }
-      const cmdStr = `${ffmpeg.path} -y -i -q:a 330 ${filePath} ${outputDir}/${fileName}.mp3`;
+      const cmdStr = `${ffmpeg.path} -y -i ${filePath} ${outputDir}/${fileName}.mp3`;
       exec(cmdStr, (err, stdout, stderr) => {
         if (err) {
           reject(`error: ${stderr}`);
