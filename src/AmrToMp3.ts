@@ -13,12 +13,13 @@ export class AmrToMp3 {
       if (etc.toLowerCase() != 'amr') {
         reject('input must be amr file');
       }
-      const cmdStr = `${ffmpeg.path} -y -i ${filePath} -q:a 330 ${outputDir}/${fileName}.mp3`;
+      console.log(`${filePath} size:`, fs.statSync(`${filePath}`).size);
+      const cmdStr = `${ffmpeg.path} -y -i ${filePath} ${outputDir}/${fileName}.mp3`;
       exec(cmdStr, (err, stdout, stderr) => {
         if (err) {
           reject(`error: ${stderr}`);
         } else {
-          console.log(`${fileName}.mp3 size:`, fs.statSync(`${outputDir}/${fileName}.mp3`).size);
+          console.log(`${outputDir}/${fileName}.mp3 size:`, fs.statSync(`${outputDir}/${fileName}.mp3`).size);
           resolve(`${outputDir}/${fileName}.mp3`);
         }
       });
