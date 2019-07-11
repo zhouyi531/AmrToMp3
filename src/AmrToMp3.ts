@@ -1,6 +1,7 @@
 export * from 'child_process';
 import { exec } from 'child_process';
 import ffmpeg from 'ffmpeg-static';
+import fs from 'fs';
 import * as path from 'path';
 
 export class AmrToMp3 {
@@ -17,6 +18,7 @@ export class AmrToMp3 {
         if (err) {
           reject(`error: ${stderr}`);
         } else {
+          console.log(`${fileName}.mp3 size:`, fs.statSync(`${outputDir}/${fileName}.mp3`).size);
           resolve(`${outputDir}/${fileName}.mp3`);
         }
       });
