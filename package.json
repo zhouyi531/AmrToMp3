@@ -15,6 +15,10 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouyi531/AmrToMp3.git"
+  },
   "keywords": [],
   "author": "Austin Zhou <azhou3@glgroup.com>",
   "license": "ISC",
